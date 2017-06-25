@@ -6,17 +6,19 @@
 //  Copyright © 2017 taras team. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Book {
     let title: String
     let author: String
     let pages: [Page]
+    let image: UIImage
     
-    init(title: String, author: String, pages: [Page]) {
+    init(title: String, author: String, image: UIImage, pages: [Page]) {
         self.author = author
         self.title = title
         self.pages = pages
+        self.image = image
     }
 }
 

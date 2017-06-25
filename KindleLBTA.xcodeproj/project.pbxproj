@@ -12,6 +12,7 @@
 		9DFC75CF1F0006CE0060EA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC75CE1F0006CE0060EA56 /* Assets.xcassets */; };
 		9DFC75D21F0006CE0060EA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC75D01F0006CE0060EA56 /* LaunchScreen.storyboard */; };
 		9DFC75DA1F0014230060EA56 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC75D91F0014230060EA56 /* Models.swift */; };
+		9DFC75DC1F003F140060EA56 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC75DB1F003F140060EA56 /* BookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9DFC75D11F0006CE0060EA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DFC75D31F0006CE0060EA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DFC75D91F0014230060EA56 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9DFC75DB1F003F140060EA56 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				9DFC75D01F0006CE0060EA56 /* LaunchScreen.storyboard */,
 				9DFC75D31F0006CE0060EA56 /* Info.plist */,
 				9DFC75D91F0014230060EA56 /* Models.swift */,
+				9DFC75DB1F003F140060EA56 /* BookCell.swift */,
 			);
 			path = KindleLBTA;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DFC75DC1F003F140060EA56 /* BookCell.swift in Sources */,
 				9DFC75DA1F0014230060EA56 /* Models.swift in Sources */,
 				9DFC75CA1F0006CE0060EA56 /* ViewController.swift in Sources */,
 				9DFC75C81F0006CE0060EA56 /* AppDelegate.swift in Sources */,

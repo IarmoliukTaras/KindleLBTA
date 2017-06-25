@@ -14,7 +14,8 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        
+        tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         navigationItem.title = "KindleLBTA"
         tableView.tableFooterView = UIView()
         setupBooks()
@@ -29,6 +30,7 @@ class ViewController: UITableViewController {
         
         let book = self.books?[indexPath.row]
         cell.textLabel?.text = book?.title
+        cell.imageView?.image = book?.image
         return cell
     }
     
@@ -44,7 +46,7 @@ class ViewController: UITableViewController {
         
         let page1 = Page(number: 2, text: "text for second page")
         
-        let book = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: [page, page1])
+        let book = Book(title: "Steve Jobs", author: "Walter Isaacson",image: #imageLiteral(resourceName: "image"), pages: [page, page1])
         
         self.books = [book]
     }
