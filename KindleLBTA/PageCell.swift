@@ -12,7 +12,6 @@ class PageCell: UICollectionViewCell {
     
     let textLabel: UILabel = {
         let label = UILabel()
-        label.text = "TextTextTextTextTextTextTextTe xtTextTextTextTextTextTextTextTextTex tTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextT extTextTextTextTextTextTextTextTextT extTextTextTextTextTextTextTextTextTextT extTextText"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
