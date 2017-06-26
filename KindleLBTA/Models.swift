@@ -12,19 +12,12 @@ class Book {
     let title: String
     let author: String
     let pages: [Page]
-    let image: UIImage
-    
-    init(title: String, author: String, image: UIImage, pages: [Page]) {
-        self.author = author
-        self.title = title
-        self.pages = pages
-        self.image = image
-    }
+    let coverImageUrl: String
     
     init(dictionary: [String: Any]) {
         self.title = dictionary["title"] as? String ?? ""
         self.author = dictionary["author"] as? String ?? ""
-        self.image = #imageLiteral(resourceName: "image")
+        self.coverImageUrl = dictionary["coverImageUrl"] as? String ?? ""
         var bookPages = [Page]()
         if let pagesDictionary = dictionary["pages"] as? [[String: Any]] {
             

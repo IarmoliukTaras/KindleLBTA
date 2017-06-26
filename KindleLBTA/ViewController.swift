@@ -88,17 +88,6 @@ class ViewController: UITableViewController {
         }
         return 0
     }
-    
-    func setupBooks() {
-        let page = Page(number: 1, text: "text for the first page")
-        
-        let page1 = Page(number: 2, text: "text for second page")
-        
-        let book = Book(title: "Steve Jobs", author: "Walter Isaacson",image: #imageLiteral(resourceName: "image"), pages: [page, page1])
-        
-        self.books = [book]
-    }
-
 
 }
 
