@@ -18,7 +18,6 @@ class ViewController: UITableViewController {
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         navigationItem.title = "KindleLBTA"
         tableView.tableFooterView = UIView()
-        setupBooks()
         fetchBooks()
     }
     
@@ -32,11 +31,28 @@ class ViewController: UITableViewController {
                     print("FAILED", err)
                     return
                 }
+                guard let data = data else { return }
                 
-                print(data!)
-                guard let dataX = data else { return }
-                let dataAsString = String(data: dataX, encoding: .utf8)
-                print(dataAsString)
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                    guard let bookDictionaries = json as? [[String: Any]] else { return }
+                    
+                    self.books = []
+                    for bookDictionary in bookDictionaries {
+                        if let title = bookDictionary["title"] as? String, let author = bookDictionary["author"] as? String {
+                            let book = Book(title: title, author: author, image: #imageLiteral(resourceName: "image"), pages: [])
+                            self.books?.append(book)
+                        }
+                    }
+                    
+                    print(self.books)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                } catch let jsonError {
+                    print(jsonError)
+                }
+
             }).resume()
         }
         
