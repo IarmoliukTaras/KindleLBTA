@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookPageController: UICollectionViewController {
+class BookPageController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,16 @@ class BookPageController: UICollectionViewController {
         navigationItem.title = "Book"
         
         collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellID")
+        
+        let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
+        
+        layout?.scrollDirection = .horizontal
+        layout?.minimumLineSpacing = 0
+        collectionView?.isPagingEnabled = true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -25,7 +35,11 @@ class BookPageController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        cell.backgroundColor = .red
+        if indexPath.item % 2 == 0 {
+            cell.backgroundColor = .red
+        } else {
+            cell.backgroundColor = .blue
+        }
         return cell
     }
 }
