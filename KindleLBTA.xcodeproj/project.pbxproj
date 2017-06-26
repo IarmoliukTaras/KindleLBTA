@@ -60,6 +60,7 @@
 		9DFC75C61F0006CE0060EA56 /* KindleLBTA */ = {
 			isa = PBXGroup;
 			children = (
+				9DFC75D91F0014230060EA56 /* Models.swift */,
 				9DFC75DB1F003F140060EA56 /* BookCell.swift */,
 				9DFC75DF1F00EA660060EA56 /* PageCell.swift */,
 				9DFC75C71F0006CE0060EA56 /* AppDelegate.swift */,
@@ -68,7 +69,6 @@
 				9DFC75CE1F0006CE0060EA56 /* Assets.xcassets */,
 				9DFC75D01F0006CE0060EA56 /* LaunchScreen.storyboard */,
 				9DFC75D31F0006CE0060EA56 /* Info.plist */,
-				9DFC75D91F0014230060EA56 /* Models.swift */,
 			);
 			path = KindleLBTA;
 			sourceTree = "<group>";

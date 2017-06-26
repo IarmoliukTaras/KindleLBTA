@@ -39,13 +39,10 @@ class ViewController: UITableViewController {
                     
                     self.books = []
                     for bookDictionary in bookDictionaries {
-                        if let title = bookDictionary["title"] as? String, let author = bookDictionary["author"] as? String {
-                            let book = Book(title: title, author: author, image: #imageLiteral(resourceName: "image"), pages: [])
-                            self.books?.append(book)
-                        }
+                        
+                        let book = Book(dictionary: bookDictionary)
+                        self.books?.append(book)
                     }
-                    
-                    print(self.books)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
