@@ -19,6 +19,29 @@ class ViewController: UITableViewController {
         navigationItem.title = "KindleLBTA"
         tableView.tableFooterView = UIView()
         setupBooks()
+        fetchBooks()
+    }
+    
+    func fetchBooks() {
+        print("Fetching books .....")
+        if let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
+        
+            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                
+                if let err = error {
+                    print("FAILED", err)
+                    return
+                }
+                
+                print(data!)
+                guard let dataX = data else { return }
+                let dataAsString = String(data: dataX, encoding: .utf8)
+                print(dataAsString)
+            }).resume()
+        }
+        
+        print("Have we fetch our books yet?")
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
